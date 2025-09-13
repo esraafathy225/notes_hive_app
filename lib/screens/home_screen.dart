@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled28/data/note_database.dart';
 import '../components/note_card.dart';
 import '../constants/colors.dart';
 import '../data/note_model.dart';
@@ -14,14 +15,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   List<Note> noteList =[];
+  var noteDatabase = NoteDatabase();
 
   @override
   void initState() {
     super.initState();
-    noteList= [
-      Note(id:0,title: 'Sample Note 1', content: 'This is the content of sample note 1', date: DateTime.now().toIso8601String()),
-      Note(id:1,title: 'Sample Note 2', content: 'This is the content of sample note 2', date: DateTime.now().toIso8601String()),
-    ];
+    noteList= noteDatabase.getNotes();
   }
 
   @override

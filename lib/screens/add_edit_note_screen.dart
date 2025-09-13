@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../components/custom_button.dart';
 import '../components/custom_text_field.dart';
 import '../constants/colors.dart';
+import '../data/note_database.dart';
 import '../data/note_model.dart';
 
 class AddEditNoteScreen extends StatefulWidget {
@@ -49,6 +50,13 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
       date: date,
     );
 
+    var noteDatabase = NoteDatabase();
+
+    if (widget.note == null) {
+      noteDatabase.addNote(note);
+    } else {
+
+    }
 
     Navigator.pop(context);
   }
