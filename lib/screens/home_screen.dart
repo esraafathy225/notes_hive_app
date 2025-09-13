@@ -13,11 +13,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-
   List<Note> noteList =[];
 
   @override
   void initState() {
+    super.initState();
     noteList= [
       Note(id:0,title: 'Sample Note 1', content: 'This is the content of sample note 1', date: DateTime.now().toIso8601String()),
       Note(id:1,title: 'Sample Note 2', content: 'This is the content of sample note 2', date: DateTime.now().toIso8601String()),
